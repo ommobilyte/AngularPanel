@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="treeGridTest">
+<head>
+    <!-- for local development -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <link href="treeGrid.css" rel="stylesheet" />
+</head>
+
+
+
+<body ng-controller="treeGridController" style="margin:20px">
+
+    <div class="col-md-3 column " style="background-color:#aaa;">
+        <div class="form-control" id="level1" ng-repeat="item in countries | filter:{ParentId:null}">
+            <a ng-click="getStates(item.DemographicId)"><span ng-bind="item.Name"></span> </a><br />
+        </div>
+    </div>
+
+    <div class="col-md-3 column form-control" style="background-color:#abbbb4;">
+        <div class="form-control" id="level1" ng-repeat="item in states">
+            <a ng-click="getCities(item.DemographicId)"><span ng-bind="item.Name"></span> </a><br />
+        </div>
+    </div>
+
+    <div class="col-md-3 column form-control" style="background-color:#7b7570;">
+        <div class="form-control" id="level1" ng-repeat="item in cities">
+            <span ng-bind="item.Name"></span> <br />
+        </div>
+    </div>
+
+
+
+
+
+    <script src="http://code.angularjs.org/1.2.12/angular.js"></script>
+    <!-- for local development -->
+
+    <script src="AngularJs.js"></script>
+    <script>
+    </script>
+</body>
+</html>
